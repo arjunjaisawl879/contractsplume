@@ -302,6 +302,9 @@ abstract contract DiamondWritableInternal is IDiamondWritableInternal {
 
  bytes32 private constant CLEAR_SELECTOR_MASK =
         bytes32(uint256(0xffffffff << 224));
+
+so bytes32(uint256(0xffffffff << 224)); = bytes32 (unit256(4294967295 * 2 ^224 ))
+
      */
 
     function _insertSelectorIntoSlug(
