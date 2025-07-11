@@ -305,6 +305,20 @@ abstract contract DiamondWritableInternal is IDiamondWritableInternal {
 
 so bytes32(uint256(0xffffffff << 224)); = bytes32 (unit256(4294967295 * 2 ^224 ))
 
+This function is typically used in systems like Diamond Standard (EIP-2535) or any selector-based dispatch mechanism, where you want to:
+
+Store multiple 4-byte selectors inside a single 32-byte word (a "slug").
+
+Each selector is 4 bytes = 32 bits.
+
+So, 8 selectors can be packed into one 256-bit bytes32 value.
+
+This saves storage and gas.
+
+
+
+
+
      */
 
     function _insertSelectorIntoSlug(
