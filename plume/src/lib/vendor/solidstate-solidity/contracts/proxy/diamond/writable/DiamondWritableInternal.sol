@@ -299,7 +299,11 @@ abstract contract DiamondWritableInternal is IDiamondWritableInternal {
      * @param slug 32-byte sequence of up to 8 function selectors
      * @param selector function selector to insert
      * @param bitIndex bit position of selector within slug (must be multiple of 32)
+
+ bytes32 private constant CLEAR_SELECTOR_MASK =
+        bytes32(uint256(0xffffffff << 224));
      */
+
     function _insertSelectorIntoSlug(
         bytes32 slug,
         bytes4 selector,
