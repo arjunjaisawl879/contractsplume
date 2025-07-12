@@ -283,6 +283,8 @@ abstract contract DiamondWritableInternal is IDiamondWritableInternal {
                     revert DiamondWritable__TargetHasNoCode();
             }
 
+//The EVM considers a delegatecall to address(0) as "successful" in a technical sense. It doesn't throw an EVM exception like "out of gas" or "invalid opcode."
+
             (bool success, ) = target.delegatecall(data);
 
             if (!success) {
