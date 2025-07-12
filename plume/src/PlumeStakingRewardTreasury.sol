@@ -87,7 +87,8 @@ contract PlumeStakingRewardTreasury is
     address[] private _rewardTokens;
     mapping(address => bool) private _isRewardToken;
 
-    /// @custom:oz-upgrades-unsafe-allow constructor
+    /// @custom:oz-upgrades-unsafe-allow constructon
+//// 
     constructor() {
         _disableInitializers();
     }
